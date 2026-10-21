@@ -4,7 +4,8 @@
 import '@em/marca/styles/tokens.css';
 import '@em/marca/styles/base.css';
 const { title, description, noindex = false } = Astro.props;
-const url = new URL(Astro.url.pathname, Astro.site).href;
+const limpia = Astro.url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '') || '/';
+const url = new URL(limpia, Astro.site).href;
 ---
 <!doctype html>
 <html lang="es">
