@@ -1,0 +1,4 @@
+# PREVISUALIZACION. Este fichero se sustituye el dia del corte de DNS
+# por el robots.txt de produccion (Allow + sitemap).
+User-agent: *
+Disallow: /
