@@ -1,0 +1,55 @@
+---
+import '@em/marca/styles/tokens.css';
+import '@em/marca/styles/base.css';
+const { title, description, noindex = false } = Astro.props;
+const url = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  {noindex && <meta name="robots" content="noindex" />}
+  <link rel="canonical" href={url} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Outfit:wght@300;600;700&display=swap" />
+</head>
+<body>
+  <header class="contenedor cabecera">
+    <a href="/" class="marca">EVOLUTION MAKERS</a>
+    <nav aria-label="Principal">
+      <a href="/servicios">Servicios</a>
+      <a href="/manifiesto">Manifiesto</a>
+      <a href="/contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor lectura">
+      <p class="secundario">Evolution Makers es una marca de EVOLUTION WORLDWIDE, S.L.</p>
+      <p class="secundario">
+        <a class="enlace" href="/aviso-legal">Aviso legal</a> ·
+        <a class="enlace" href="/politica-de-privacidad">Privacidad</a> ·
+        <a class="enlace" href="/politica-de-cookies">Cookies</a>
+      </p>
+    </div>
+  </footer>
+
+  <style>
+    .cabecera { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 20px; flex-wrap: wrap; }
+    .marca { font-family: var(--font-marca); font-size: 18px; letter-spacing: .02em; text-decoration: none; color: var(--tinta); }
+    nav { display: flex; gap: 24px; }
+    nav a { text-decoration: none; font-size: var(--texto); display: inline-flex; align-items: center; min-height: var(--pulsacion); }
+    nav a:hover { color: var(--amarillo-legible); }
+    .pie { background: var(--fondo-oscuro); color: #fff; padding-block: var(--aire-seccion); margin-top: var(--aire-seccion); }
+    .pie .secundario { color: #b9b9b9; }
+  </style>
+</body>
+</html>

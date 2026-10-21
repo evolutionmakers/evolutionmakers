@@ -1,0 +1,10 @@
+---
+/* El unico boton de la web. La nota de debajo no es opcional:
+   si no se te ocurre que poner ahi, el boton esta pidiendo algo
+   que el visitante todavia no quiere dar. */
+const { href, nota } = Astro.props;
+---
+<p>
+  <a class="boton" href={href}><slot /></a>
+  {nota && <span class="boton-nota">{nota}</span>}
+</p>

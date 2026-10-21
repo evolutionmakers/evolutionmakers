@@ -1,0 +1,56 @@
+/* Sistema de identidad de Evolution Makers.
+   Fuente de verdad: claude/guia-de-estilos-web.md (v3, 4/10/2026).
+   Si algo de aqui choca con la home en produccion, gana la home. */
+
+:root {
+  /* Tipografia */
+  --font: "Outfit", system-ui, -apple-system, sans-serif;
+  --font-marca: "Alfa Slab One", Georgia, serif;
+
+  /* Color */
+  --tinta: #1d1d1d;          /* titulares */
+  --cuerpo: #353535;         /* texto corrido */
+  --gris: #6b6b6b;           /* pies, notas, microcopia */
+  --amarillo: #fac100;       /* botones y acentos, SIEMPRE con texto negro encima */
+  --amarillo-legible: #ad8600; /* cuando el amarillo tiene que leerse solo sobre fondo claro */
+  --filete: #e3e3e3;         /* separadores */
+  --fondo: #ffffff;
+  --fondo-suave: #f6f6f6;
+  --fondo-oscuro: #1d1d1d;   /* secciones invertidas */
+
+  /* Escala - paginas del tema (escritorio) */
+  --h1-tema: 48px;           /* 72px solo en la home */
+  --h1-home: 72px;
+  --h2-tema: 40px;
+  --h3-tema: 28px;
+  --h4-tema: 24px;
+
+  /* Escala - landings de fragmento (escritorio) */
+  --h1-landing: 52px;
+  --h2-landing: 30px;
+  --h3-landing: 19px;
+
+  /* Cuerpo, igual en los dos registros */
+  --texto: 18px;
+  --secundario: 15px;
+
+  /* Espaciado */
+  --aire-seccion: clamp(36px, 6vw, 58px);
+  --aire-parrafo: 18px;      /* nunca cero: es lo que produce el efecto mazacote */
+  --ancho-lectura: 760px;
+  --ancho-contenedor: 1360px;
+  --margen-movil: 20px;
+  --pulsacion: 44px;         /* alto minimo de cualquier cosa que se pulse */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --h1-tema: 29.6px;
+    --h1-home: 29.6px;
+    --h2-tema: 22.6px;
+    --h3-tema: 20px;
+    --h4-tema: 20px;
+    --h1-landing: 32px;
+    --h2-landing: 24px;
+  }
+}

@@ -1,0 +1,69 @@
+---
+import Landing from '../layouts/Landing.astro';
+
+const pilares = [
+  { n: '01', t: 'El cambio es lo único permanente.', p: 'Puedes cambiar antes de que haga falta o hacerlo por obligación. Puedes llevar la iniciativa y controlar los tiempos, o ir a rebufo y tener que correr. Puedes cambiar solo lo que no funciona o atreverte también con lo que va bien. Tú decides. Pero cambiar, vas a cambiar. O vas a desaparecer.' },
+  { n: '02', t: 'Hazte un auténtico CEO. Y no es lo que estás pensando.', p: 'No hablo del cargo de la tarjeta. Hablo del que se ocupa de que la empresa sea mejor mañana que hoy. Montaste esto porque sabías que se podía hacer mejor, y lo conseguiste: enhorabuena. Pero eso solo te trajo hasta aquí. Tu trabajo ya no es hacer: es pensar, decidir, inspirar y empezar cosas.' },
+  { n: '03', t: 'No es el tamaño, es la rentabilidad.', p: 'Grande no significa bueno. Rentable, sí. Crecer sin rentabilidad, o a costa de ella, es la mayor estupidez que puedes hacer. Mejor pequeño y con buen margen que grande y con mil problemas. ¿Que en tu sector eso es imposible? Hemos doblado márgenes en más de 100 casos y más de 15 sectores. No eres tan especial.' },
+  { n: '04', t: 'Dale a la gente lo que está dispuesta a pagar.', p: 'No lo que crees que necesita. No lo que a ti te apasiona hacer. Esto no va de ser el mejor ni el más avanzado: va de encajar con el mercado. Y el mercado no miente, solo incomoda. Escúchalo. Tus clientes no saben lo que quieren: dáselo, cóbralo y, si no tira, elimínalo.' },
+  { n: '05', t: 'Diferénciate en el cómo: simple, sistematizado y automático.', p: 'Tu producto lo copian en seis meses; tu manera de operar, no. Objetivos claros, funciones repartidas, procesos y herramientas. Y en ese orden: primero simplifica, luego sistematiza y solo al final automatiza, porque automatizar un lío solo te da un lío más rápido. Lo que depende de tu memoria se cae. Lo que no está escrito no existe.' },
+  { n: '06', t: 'Liderar es conseguir que quieran hacerlo.', p: 'No que tengan que hacerlo. Dedica tiempo a explicarte, a contar el porqué, el plan y hacia dónde vamos. Pregunta al que está en el tajo. Amuebla cabezas en las conversaciones de cada día. Da las gracias. Y después confía: déjales trabajar, dales tiempo y evalúa. Si no funciona, a la calle. Otro. No hay magia.' },
+  { n: '07', t: 'Todos venden. Y el mejor marketing son clientes contentos.', p: 'Vende el que factura y vende el que coge el teléfono. No hay campaña más creíble que alguien hablando bien de ti sin que se lo hayas pedido. Clientes contentos: esa es la mejor inversión. Clientes gilipollas: ese es el peor objetivo. A partir de ahí se construye una cartera de incondicionales.' },
+  { n: '08', t: 'Equivócate rápido y barato. Y prepárate para lo peor.', p: 'El fracaso es parte inseparable del éxito. Innovar no sale bien a la primera, y experimentar es sobre todo descubrir cómo no hacerlo. El riesgo no se evita: se gestiona. Aprende a imaginarte perdiéndolo todo, porque desde ahí se decide mucho mejor. Equivócate, pero cada vez mejor: en cosas distintas, más rápido y más barato.' },
+  { n: '09', t: 'Ningún rumbo es bueno si no sabes dónde vas.', p: 'Un plan estratégico no es un documento: es saber qué vas a hacer, cómo, cuándo y para qué. Es ejecución. Es desviarse, recalcular y recalibrar objetivos. Algo vivo y vivido. Pensarlo, hacerlo y contagiárselo al equipo es lo que hace que todos remen a la vez y hacia el mismo sitio. Para llegar.' },
+  { n: '10', t: 'Tu empresa funciona cuando no haces falta.', p: 'Empresa es cuando las cosas pasan sin ti: no te enteras y, además, lo habrían hecho igual o mejor. Eso no es perder el control: es tenerlo de verdad. Si todo depende de que tú estés, no tienes una empresa: tienes un puesto de trabajo muy caro y muy cansado.' }
+];
+---
+<Landing title="Manifiesto: 10 ideas para dirigir mejor tu empresa | Evolution Makers" description="Veinte años trabajando con fundadores y directores generales, en diez ideas. No hay nada que comprar en esta página.">
+  <p class="secundario">Manifiesto · diez ideas para dirigir</p>
+  <h1>Nadie monta una empresa para acabar apagando fuegos.</h1>
+  <p>Llevo veinte años trabajando a diario con fundadores y directores generales. Esto es lo que he aprendido y lo que pensamos aquí. No hay nada que comprar en esta página.</p>
+
+  <h2>Grandísimos profesionales de lo suyo. No tan buenos empresarios.</h2>
+  <p>Es el patrón que más se repite en la pequeña y mediana empresa. Y no es un defecto: es que nadie te enseñó la otra mitad del oficio.</p>
+
+  <h3>Por qué la montaste</h3>
+  <p>Eras muy bueno en lo tuyo. Estabas convencido de que las cosas se podían hacer mejor. Y querías ser dueño de tu destino y de tus decisiones.</p>
+
+  <h3>Dónde estás hoy</h3>
+  <p>Un equipo que atender, un montón de clientes que satisfacer y un millón de tareas que te comen el día. Tareas para las que no te preparaste, que no te da tiempo a hacer y que no sabes delegar.</p>
+  <p>Esa es la tumba que muchos empresarios se cavan por inercia, sin querer.</p>
+  <p>Y lo saben. Están hartos de que les hablen de delegar y de lo importante frente a lo urgente. Pero no hay manera de bajarse de la cinta.</p>
+
+  <h2>Ahí está la encrucijada</h2>
+  <p>Todo eso te aleja justo de aquello por lo que montaste la empresa, que era hacer las cosas mejor. Esa carga te quita la serenidad y la perspectiva para cambiar lo que hay que cambiar.</p>
+  <p>Y tu energía acaba puesta en apagar los fuegos de hoy en lugar de en construir algo que funcione sin depender de ti.</p>
+  <p>Esto es lo que pensamos sobre todo eso.</p>
+
+  <h2>Los 10 pilares de nuestra mentalidad</h2>
+  <ol class="decalogo">
+    {pilares.map((x) => (
+      <li>
+        <span class="numeral" aria-hidden="true">{x.n}</span>
+        <h3>{x.t}</h3>
+        <p>{x.p}</p>
+      </li>
+    ))}
+  </ol>
+
+  <p>Sin serenidad no hay claridad. Sin claridad no hay decisión. Y sin decisión, no cambia nada.</p>
+  <p>La perspectiva no es un lujo para cuando tengas tiempo: es la materia prima de tu trabajo. Sin ella, ni diriges ni eres general.</p>
+
+  <h2>Deja de leer y haz algo de una vez</h2>
+  <p>Sabes lo que quieres y lo que tienes que hacer. Y en el fondo sabes que no estás encontrando la manera: ni las teclas, ni la velocidad, ni el foco.</p>
+  <p>Reconocerlo no te hace más débil ni peor director general. Te hace inteligente, ejecutivo y humano. Los listos no son los que lo saben todo: son los que tienen el teléfono de quien puede ayudar, y lo cogen.</p>
+
+  <p>
+    <a class="boton" href="/contacto">Coge el atajo y hablemos</a>
+    <span class="boton-nota">Media hora, sin coste y sin compromiso.</span>
+  </p>
+</Landing>
+
+<style>
+  .decalogo { list-style: none; padding: 0; margin: var(--aire-seccion) 0; }
+  .decalogo li { padding-top: 28px; border-top: 1px solid var(--filete); margin-bottom: 28px; }
+  .decalogo li:first-child { border-top: 0; padding-top: 0; }
+  /* Los numerales 01-10 son uno de los tres usos tasados de Alfa Slab One */
+  .numeral { display: block; font-family: var(--font-marca); font-weight: 400; font-size: 28px; color: var(--amarillo-legible); margin-bottom: 8px; }
+  .decalogo h3 { margin-bottom: 8px; }
+</style>

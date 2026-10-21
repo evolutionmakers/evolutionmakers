@@ -1,0 +1,45 @@
+---
+import Landing from '../layouts/Landing.astro';
+---
+<Landing title="Gracias, lo tengo | Evolution Makers" description="Solicitud recibida. Te contesto yo, en un día laborable." noindex={true}>
+  <p class="secundario">Solicitud recibida</p>
+  <h1>Lo tengo. Te contesto yo.</h1>
+  <p>No hay secuencia automática detrás de esto. Lo leo yo, y la respuesta te la escribo yo.</p>
+
+  <h2>Qué pasa ahora</h2>
+  <ol class="pasos">
+    <li><strong>Lo leo hoy o mañana.</strong> Respuesta en un día laborable. Si escribiste un viernes por la tarde, el lunes.</li>
+    <li><strong>Te digo si tiene sentido o no.</strong> Si por lo que cuentas no hace falta una revisión, te lo digo y te ahorro el dinero. Pasa más de lo que parece.</li>
+    <li><strong>Media hora por videoconferencia.</strong> Sin coste, para ver qué tienes montado. Hablas conmigo, no con un comercial. NDA si lo prefieres.</li>
+    <li><strong>Si seguimos, empezamos.</strong> La revisión es una semana. Sales con el documento, se descuente o no del trabajo que venga después.</li>
+  </ol>
+
+  <h2>Mientras tanto</h2>
+  <p>Tres cosas que contestan la mitad de lo que me suelen preguntar en esa primera llamada.</p>
+  <ul>
+    <li><a class="enlace" href="/zoho">Cómo trabajo Zoho</a> — las cuatro fases, el mínimo de proyecto y para quién no es.</li>
+    <li><a class="enlace" href="/manifiesto">El manifiesto</a> — los diez principios con los que decido. Si no los compartes, mejor saberlo ya.</li>
+    <li><a class="enlace" href="/chief-evolution-officer">Chief Evolution Officer</a> — cuando el problema no es la herramienta, es la dirección.</li>
+  </ul>
+
+  <p class="secundario">¿Es urgente? Si esto no puede esperar a mañana, escríbeme directamente a <a class="enlace" href="mailto:hola@evolutionmakers.plus?subject=URGENTE">hola@evolutionmakers.plus</a> poniendo URGENTE en el asunto, o reserva hueco en el calendario desde la <a class="enlace" href="/contacto">página de contacto</a>.</p>
+</Landing>
+
+<!-- Evento de conversion. Portado tal cual de produccion: GA4 G-D1PDWNQ0S3,
+     evento generate_lead con el id de formulario que llega en ?f= -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-D1PDWNQ0S3"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D1PDWNQ0S3');
+  (function () {
+    var src = new URLSearchParams(location.search).get('f') || 'desconocido';
+    gtag('event', 'generate_lead', { form_id: src, currency: 'EUR', value: 990 });
+  })();
+</script>
+
+<style>
+  .pasos { padding-left: 1.2em; }
+  .pasos li { margin-bottom: var(--aire-parrafo); }
+</style>

@@ -1,0 +1,11 @@
+# Despliegue de la web publica: www.evolutionmakers.plus
+[build]
+  base = "apps/web"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# La herramienta del Club se despliega aparte, desde apps/club,
+# con su propio sitio de Netlify y sus propios secretos.

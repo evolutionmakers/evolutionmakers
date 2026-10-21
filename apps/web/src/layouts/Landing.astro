@@ -1,0 +1,39 @@
+---
+/* Landings de fragmento: sin menu, para leerse de un tiron.
+   H1 a 52px y alineado a la izquierda. */
+import '@em/marca/styles/tokens.css';
+import '@em/marca/styles/base.css';
+const { title, description, noindex = false } = Astro.props;
+const url = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  {noindex && <meta name="robots" content="noindex" />}
+  <link rel="canonical" href={url} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Outfit:wght@300;600;700&display=swap" />
+</head>
+<body class="landing">
+  <main class="contenedor lectura seccion">
+    <slot />
+  </main>
+  <footer class="contenedor lectura">
+    <p class="secundario">
+      <a class="enlace" href="/aviso-legal">Aviso legal</a> ·
+      <a class="enlace" href="/politica-de-privacidad">Privacidad</a> ·
+      <a class="enlace" href="/politica-de-cookies">Cookies</a>
+    </p>
+  </footer>
+  <style is:global>
+    .landing h1 { font-size: var(--h1-landing); text-align: left; }
+    .landing h2 { font-size: var(--h2-landing); margin-top: var(--aire-seccion); }
+    .landing h3 { font-size: var(--h3-landing); }
+  </style>
+</body>
+</html>

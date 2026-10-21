@@ -1,0 +1,9 @@
+{
+  "name": "evolutionmakers",
+  "private": true,
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "dev": "npm run dev --workspace=@em/web",
+    "build": "npm run build --workspace=@em/web"
+  }
+}

@@ -1,0 +1,18 @@
+---
+import Tema from '../layouts/Tema.astro';
+import Boton from '@em/marca/components/Boton.astro';
+---
+<Tema title="Evolution Makers" description="Esqueleto de la web nueva. Pendiente de portar la home.">
+  <section class="contenedor seccion">
+    <div class="lectura">
+      <h1>Esqueleto</h1>
+      <p>Esta es la tuberia de la web nueva, no la home. Sirve para comprobar que el paquete de marca, el despliegue y las paginas funcionan de punta a punta antes de portar nada.</p>
+      <p>Portadas ya: <a class="enlace" href="/manifiesto">manifiesto</a>, <a class="enlace" href="/aviso-legal">aviso legal</a> y <a class="enlace" href="/gracias">gracias</a>.</p>
+      <Boton href="/contacto" nota="Media hora de videoconferencia. Sin compromiso.">Hablemos</Boton>
+    </div>
+  </section>
+</Tema>
+<style>
+  h1 { font-size: var(--h1-home); }
+  h2 { font-size: var(--h2-tema); }
+</style>
