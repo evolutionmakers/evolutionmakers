@@ -1,0 +1,42 @@
+---
+/* Página del audio personalizado que se manda tras llamar a Sofía (teléfono IA, 910 055 130).
+   Llega desde el correo como /escucha?a=<token>. Sin menú y fuera de buscadores.
+   El audio lo sirve el Apps Script «EM Sofía · Correo de información y audio» (JSONP con ?cb=). */
+import Landing from '../layouts/Landing.astro';
+import Boton from '@em/marca/components/Boton.astro';
+---
+<Landing title="Un audio para ti | Evolution Makers" description="Audio de Ramón Laguna tras tu llamada a Evolution Makers." noindex={true}>
+  <img class="escucha-logo" src="/img/logo-em.png" alt="Evolution Makers" width="140" />
+  <h1 id="escucha-titulo">Un audio para ti</h1>
+  <p class="secundario">Audio generado con inteligencia artificial a partir de la voz de Ramón Laguna.</p>
+  <audio id="escucha-audio" controls preload="auto" hidden></audio>
+  <p id="escucha-estado">Cargando el audio…</p>
+  <Boton href="https://cita.evolutionmakers.plus/#/videoconferencia" nota="Media hora por videollamada, sin coste y sin compromiso.">Reservar la videollamada</Boton>
+</Landing>
+
+<script is:inline>
+  (function () {
+    var APP = 'https://script.google.com/macros/s/AKfycbxdBDNqyRpZoqc5c-J6lrsjTWCR1P-O9-4yRhILBK5m6Hx1tndChHEwFxbEGieCKFh-/exec';
+    var a = (new URLSearchParams(location.search).get('a') || '').replace(/[^A-Za-z0-9_-]/g, '');
+    var estado = document.getElementById('escucha-estado');
+    if (!a) { estado.textContent = 'Este enlace no es válido.'; return; }
+    window.emPintaAudio = function (d) {
+      if (!d || !d.ok) { estado.textContent = 'Este audio ya no está disponible.'; return; }
+      if (d.nombre) document.getElementById('escucha-titulo').textContent = 'Un audio para ti, ' + d.nombre;
+      var bin = atob(d.mp3), n = bin.length, u = new Uint8Array(n);
+      for (var i = 0; i < n; i++) u[i] = bin.charCodeAt(i);
+      var au = document.getElementById('escucha-audio');
+      au.src = URL.createObjectURL(new Blob([u], { type: 'audio/mpeg' }));
+      au.hidden = false; estado.hidden = true;
+    };
+    var s = document.createElement('script');
+    s.src = APP + '?a=' + a + '&cb=emPintaAudio';
+    s.onerror = function () { estado.textContent = 'No se ha podido cargar el audio. Prueba de nuevo en un momento.'; };
+    document.body.appendChild(s);
+  })();
+</script>
+
+<style>
+  .escucha-logo { display: block; height: auto; margin-bottom: 28px; }
+  #escucha-audio { width: 100%; margin: 8px 0 0; }
+</style>
